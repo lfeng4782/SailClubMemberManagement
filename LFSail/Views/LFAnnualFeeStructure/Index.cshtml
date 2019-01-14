@@ -1,0 +1,108 @@
+﻿@model IEnumerable<LFSail.Models.AnnualFeeStructure>
+
+@{
+    ViewData["Title"] = "Annual Fees by year";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnnualFee)
+            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.EarlyDiscountedFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EarlyDiscountEndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RenewDeadlineDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaskExemptionFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecondBoatFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThirdBoatFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ForthAndSubsequentBoatFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NonSailFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NewMember25DiscountDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NewMember50DiscountDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NewMember75DiscountDate)
+        </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnnualFee)
+            </td>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.EarlyDiscountedFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EarlyDiscountEndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RenewDeadlineDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaskExemptionFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SecondBoatFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThirdBoatFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ForthAndSubsequentBoatFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NonSailFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NewMember25DiscountDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NewMember50DiscountDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NewMember75DiscountDate)
+        </td>*@
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Year">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Year">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Year">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
